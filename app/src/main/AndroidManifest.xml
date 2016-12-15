@@ -15,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SAActivity">0</activity>
+        <activity android:name=".LRActivity">1</activity>
+        <activity android:name=".DNActivity">2</activity>
     </application>
 
 </manifest>
