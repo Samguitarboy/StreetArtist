@@ -21,21 +21,26 @@ import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
 public class Fragment_SA_findsite extends Fragment {
     TextView test;
-    ArtPlaceSting[] PlaceString;
+    ArtPlaceSting[] PlaceString ;
+    boolean first=true;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v =inflater.inflate(R.layout.fragment_sa_findsite, container, false);
-        PlaceString =new ArtPlaceSting[1000];
-        for(int i=0;i<1000;i++){
-            PlaceString[i] = new ArtPlaceSting();
+        if (first==true){
+            PlaceString =new ArtPlaceSting[1000];
+            for(int i=0;i<1000;i++){
+                PlaceString[i] = new ArtPlaceSting();
+            }
+            first=false;
         }
         new AsyncTaskParseJson().execute();
         test=(TextView) v.findViewById(R.id.testtext);
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
         v.requestFocus();
-        test.setText(PlaceString[0].place);
+
         v.setOnKeyListener( new View.OnKeyListener()
         {
             @Override
@@ -56,38 +61,27 @@ public class Fragment_SA_findsite extends Fragment {
     public class AsyncTaskParseJson extends AsyncTask<String, String, String> {
 
         final String TAG = "AsyncTaskParseJson.java";
-
         // set your json string url here
         String JsonUrl = "http://cloud.culture.tw/frontsite/trans/SearchPerformPlaceAction.do?method=doFindPerformPlaceTypeJ";
-
         // contacts JSONArray
         JSONArray dataJsonArr = null;
-
         @Override
         protected void onPreExecute() {}
-
         @Override
         protected String doInBackground(String... arg0) {
-
             try {
-
                 // instantiate our json parser
                 JsonParser jParser = new JsonParser();
-
 // get json string from url
                 JSONObject jsonobj = jParser.getJSONFromUrl(JsonUrl);
-
 // get the array of users
                 //dataJsonArr = json.getJSONArray();
-
 // loop through all users
                 dataJsonArr = new JSONArray(json);
                 int len=dataJsonArr.length();
                 for(int i=0;i<len;i++){
                     //for (int i = 0; i < dataJsonArr.length(); i++) {
-
                     JSONObject c = dataJsonArr.getJSONObject(i);
-
 // Storing each json item in variable
                     PlaceString[i].place = c.getString("placeName");
                     PlaceString[i].address = c.getString("address");
@@ -97,19 +91,11 @@ public class Fragment_SA_findsite extends Fragment {
                     PlaceString[i].email= c.getString("email");
                     PlaceString[i].register= c.getString("register");
 
-                    // String performer = c.getString("performerName");
-                    //  String city = c.getString("cityName");
-                    // String theme = c.getString("performTheme");
-                    // String type= c.getString("performerActType");
-//String username = c.getString("username");
-
                     // show the values in our logcat
 
                     Log.e(TAG,"Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address+ ",  ApplyUnit:" + PlaceString[i].applyunit+ ",  Phone:" + PlaceString[i].phone+ ",  Fax:" + PlaceString[i].fax+ ",  Email:" + PlaceString[i].email+ ",  Register:" + PlaceString[i].register);
 
                 }
-
-               // Log.e(TAG,"Place:" + PlaceString[0].place + ",  Adress:" + PlaceString[0].address);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
