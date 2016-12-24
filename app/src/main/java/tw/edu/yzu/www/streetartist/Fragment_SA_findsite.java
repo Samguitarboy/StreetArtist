@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,14 +20,22 @@ import static tw.edu.yzu.www.streetartist.JsonParser.json;
  */
 
 public class Fragment_SA_findsite extends Fragment {
+    TextView test;
+    ArtPlaceSting[] PlaceString;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v =inflater.inflate(R.layout.fragment_sa_findsite, container, false);
+        PlaceString =new ArtPlaceSting[1000];
+        for(int i=0;i<1000;i++){
+            PlaceString[i] = new ArtPlaceSting();
+        }
         new AsyncTaskParseJson().execute();
+        test=(TextView) v.findViewById(R.id.testtext);
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
         v.requestFocus();
+        test.setText(PlaceString[0].place);
         v.setOnKeyListener( new View.OnKeyListener()
         {
             @Override
@@ -40,6 +49,7 @@ public class Fragment_SA_findsite extends Fragment {
                 return false;
             }
         } );
+
         return v;
     }
 
@@ -79,13 +89,13 @@ public class Fragment_SA_findsite extends Fragment {
                     JSONObject c = dataJsonArr.getJSONObject(i);
 
 // Storing each json item in variable
-                    String place = c.getString("placeName");
-                    String address = c.getString("address");
-                    String applyunit = c.getString("applyUnit");
-                    String phone = c.getString("officePhone");
-                    String fax = c.getString("fax");
-                    String email= c.getString("email");
-                    String register= c.getString("register");
+                    PlaceString[i].place = c.getString("placeName");
+                    PlaceString[i].address = c.getString("address");
+                    PlaceString[i].applyunit = c.getString("applyUnit");
+                    PlaceString[i].phone = c.getString("officePhone");
+                    PlaceString[i].fax = c.getString("fax");
+                    PlaceString[i].email= c.getString("email");
+                    PlaceString[i].register= c.getString("register");
 
                     // String performer = c.getString("performerName");
                     //  String city = c.getString("cityName");
@@ -95,10 +105,11 @@ public class Fragment_SA_findsite extends Fragment {
 
                     // show the values in our logcat
 
-                    Log.e(TAG,"Place:" + place + ",  Adress:" +address+ ",  ApplyUnit:" +applyunit+ ",  Phone:" +phone+ ",  Fax:" +fax+ ",  Email:" +email+ ",  Register:" +register);
+                    Log.e(TAG,"Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address+ ",  ApplyUnit:" + PlaceString[i].applyunit+ ",  Phone:" + PlaceString[i].phone+ ",  Fax:" + PlaceString[i].fax+ ",  Email:" + PlaceString[i].email+ ",  Register:" + PlaceString[i].register);
 
                 }
 
+               // Log.e(TAG,"Place:" + PlaceString[0].place + ",  Adress:" + PlaceString[0].address);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -131,4 +142,14 @@ public class Fragment_SA_findsite extends Fragment {
 
         return super.onOptionsItemSelected(item);
     }*/
+}
+class ArtPlaceSting {
+
+    String place ;
+    String address ;
+    String applyunit ;
+    String phone ;
+    String fax ;
+    String email ;
+    String register ;
 }
