@@ -35,7 +35,7 @@ public class Fragment_VArt extends Fragment {
         final String TAG = "AsyncTaskParseJson.java";
 
         // set your json string url here
-        String JsonUrl = "http://cloud.culture.tw/frontsite/trans/SearchBuskerAction.do?method=doFindBuskerTypeJ";
+        String JsonUrl = "http://cloud.culture.tw/frontsite/trans/SearchPerformPlaceAction.do?method=doFindPerformPlaceTypeJ";
 
         // contacts JSONArray
         JSONArray dataJsonArr = null;
@@ -66,15 +66,29 @@ public class Fragment_VArt extends Fragment {
                     JSONObject c = dataJsonArr.getJSONObject(i);
 
 // Storing each json item in variable
-                    String performer = c.getString("performerName");
-                    String city = c.getString("cityName");
-                   // String theme = c.getString("performTheme");
-                  //  String type= c.getString("performerActType");
+
+
+
+
+
+
+                    String place = c.getString("placeName");
+                    String address = c.getString("address");
+                    String applyunit = c.getString("applyUnit");
+                    String phone = c.getString("officePhone");
+                    String fax = c.getString("fax");
+                    String email= c.getString("email");
+                    String register= c.getString("register");
+
+                    // String performer = c.getString("performerName");
+                    //  String city = c.getString("cityName");
+                    // String theme = c.getString("performTheme");
+                    // String type= c.getString("performerActType");
 //String username = c.getString("username");
 
-                    // show the values in our logcat
-                    Log.e(TAG, "Performer: " + performer
-                            + ", City " + city );
+                        // show the values in our logcat
+
+                        Log.e(TAG,"Place:" + place + ",  Adress:" +address+ ",  ApplyUnit:" +applyunit+ ",  Phone:" +phone+ ",  Fax:" +fax+ ",  Email:" +email+ ",  Register:" +register);
 
                 }
 
