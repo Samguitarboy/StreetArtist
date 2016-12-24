@@ -8,6 +8,9 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -15,13 +18,25 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
+import com.nightonke.boommenu.BoomMenuButton;
+
 /**
  * Created by user on 2016/12/20.
  */
 
 public class Fragment_SA_findsite extends Fragment {
-    TextView test;
-    ArtPlaceSting[] PlaceString ;
+    public class ArtPlaceSting {
+
+        private String place ;
+        private String address ;
+        private String applyunit ;
+        private String phone ;
+        private String fax ;
+        private String email ;
+        private String register ;
+    }
+
+    static ArtPlaceSting[] PlaceString ;
     boolean first=true;
 
     @Override
@@ -36,7 +51,19 @@ public class Fragment_SA_findsite extends Fragment {
             first=false;
         }
         new AsyncTaskParseJson().execute();
-        test=(TextView) v.findViewById(R.id.testtext);
+
+        ListView listView = (ListView) v.findViewById(R.id.list_view);
+        assert listView != null;
+        listView.setAdapter(new MyAdapter());
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        BoomMenuButton bmb = (BoomMenuButton)view.findViewById(R.id.bmb2);
+                        bmb.boom();
+                    }
+                });
+
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
         v.requestFocus();
@@ -57,6 +84,56 @@ public class Fragment_SA_findsite extends Fragment {
 
         return v;
     }
+    static class MyAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return 1000;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, final ViewGroup parent) {
+
+            final ViewHolder viewHolder;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, null);
+
+                viewHolder = new ViewHolder();
+                viewHolder.text = (TextView) convertView.findViewById(R.id.text);
+                viewHolder.bmb2 = (BoomMenuButton) convertView.findViewById(R.id.bmb2);
+
+
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+            viewHolder.text.setText(PlaceString[position].place);
+
+
+            viewHolder.bmb2.clearBuilders();
+            for (int i = 0; i < viewHolder.bmb2.getPiecePlaceEnum().pieceNumber(); i++)
+                viewHolder.bmb2.addBuilder(BuilderManager.getHamButtonBuilder());
+
+
+            return convertView;
+        }
+
+        class ViewHolder {
+            TextView text;
+            BoomMenuButton bmb2;
+        }
+    }
 
     public class AsyncTaskParseJson extends AsyncTask<String, String, String> {
 
@@ -72,17 +149,13 @@ public class Fragment_SA_findsite extends Fragment {
             try {
                 // instantiate our json parser
                 JsonParser jParser = new JsonParser();
-// get json string from url
-                JSONObject jsonobj = jParser.getJSONFromUrl(JsonUrl);
-// get the array of users
-                //dataJsonArr = json.getJSONArray();
-// loop through all users
+                // get json string from url
+                jParser.getJSONFromUrl(JsonUrl);
                 dataJsonArr = new JSONArray(json);
                 int len=dataJsonArr.length();
                 for(int i=0;i<len;i++){
-                    //for (int i = 0; i < dataJsonArr.length(); i++) {
                     JSONObject c = dataJsonArr.getJSONObject(i);
-// Storing each json item in variable
+                    // Storing each json item in variable
                     PlaceString[i].place = c.getString("placeName");
                     PlaceString[i].address = c.getString("address");
                     PlaceString[i].applyunit = c.getString("applyUnit");
@@ -92,14 +165,11 @@ public class Fragment_SA_findsite extends Fragment {
                     PlaceString[i].register= c.getString("register");
 
                     // show the values in our logcat
-
                     Log.e(TAG,"Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address+ ",  ApplyUnit:" + PlaceString[i].applyunit+ ",  Phone:" + PlaceString[i].phone+ ",  Fax:" + PlaceString[i].fax+ ",  Email:" + PlaceString[i].email+ ",  Register:" + PlaceString[i].register);
-
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
 
@@ -107,35 +177,6 @@ public class Fragment_SA_findsite extends Fragment {
         protected void onPostExecute(String strFromDoInBg) {}
     }
 
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-//noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 }
-class ArtPlaceSting {
 
-    String place ;
-    String address ;
-    String applyunit ;
-    String phone ;
-    String fax ;
-    String email ;
-    String register ;
-}

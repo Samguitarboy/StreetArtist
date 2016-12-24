@@ -20,9 +20,16 @@ import static tw.edu.yzu.www.streetartist.JsonParser.json;
  */
 
 public class Fragment_LR_VArt extends Fragment {
+    public class ArtString {
+        private String name ;
+        private String city ;
+        private String theme ;
+        private String type ;
+    }
 
     ArtString[] artString;
     boolean first = true;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.view_art, container, false);
@@ -71,18 +78,11 @@ public class Fragment_LR_VArt extends Fragment {
                     // instantiate our json parser
                     JsonParser jParser = new JsonParser();
 
-// get json string from url
-                    JSONObject jsonobj = jParser.getJSONFromUrl(JsonUrl);
-
-// get the array of users
-                    //dataJsonArr = json.getJSONArray();
-
-// loop through all users
+                    // get json string from url
+                    jParser.getJSONFromUrl(JsonUrl);
                     dataJsonArr = new JSONArray(json);
                     int len=dataJsonArr.length();
                     for(int i=0;i<len;i++){
-                        //for (int i = 0; i < dataJsonArr.length(); i++) {
-
                         JSONObject c = dataJsonArr.getJSONObject(i);
 
 // Storing each json item in variable
@@ -99,20 +99,7 @@ public class Fragment_LR_VArt extends Fragment {
                             artString[i].type = c.getString("performerActType");
                             Log.e(TAG,"Name:" + artString[i].name + ",  City:" + artString[i].city+ ",  Theme:" + artString[i].theme+ ",  Type:" + artString[i].type );
                         }
-
-                        // String performer = c.getString("performerName");
-                        //  String city = c.getString("cityName");
-                        // String theme = c.getString("performTheme");
-                        // String type= c.getString("performerActType");
-//String username = c.getString("username");
-
-                        // show the values in our logcat
-
-
-
                     }
-
-                    // Log.e(TAG,"Place:" + PlaceString[0].place + ",  Adress:" + PlaceString[0].address);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -123,38 +110,9 @@ public class Fragment_LR_VArt extends Fragment {
             @Override
             protected void onPostExecute(String strFromDoInBg) {}
         }
-
-  /*  @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-//noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-    }
-
-    class ArtString {
-
-        String name ;
-        String city ;
-        String theme ;
-        String type ;
-
-    }
 
 
 
