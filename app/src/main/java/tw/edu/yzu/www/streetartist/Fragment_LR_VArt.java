@@ -22,12 +22,16 @@ import static tw.edu.yzu.www.streetartist.JsonParser.json;
 public class Fragment_LR_VArt extends Fragment {
 
     ArtString[] artString;
+    boolean first = true;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.view_art, container, false);
-        artString =new ArtString[3500];
-        for(int i=0;i<3500;i++) {
-            artString[i] = new ArtString();
+        if (first==true){
+            artString =new ArtString[3500];
+            for(int i=0;i<3500;i++) {
+                artString[i] = new ArtString();
+            }
+            first=false;
         }
         new AsyncTaskParseJson().execute();
         v.setFocusable(true);
@@ -82,13 +86,13 @@ public class Fragment_LR_VArt extends Fragment {
                         JSONObject c = dataJsonArr.getJSONObject(i);
 
 // Storing each json item in variable
-                        if (c.isNull("performTheme")==false&&c.isNull("perfoermerActType")==false) {//return true or false)
+                       /* if (c.isNull("performTheme")==true&&c.isNull("perfoermerActType")==true) {//return true or false)
                             artString[i].name = c.getString("performerName");
                             artString[i].city = c.getString("cityName");
                             Log.e(TAG,"Name:" + artString[i].name + ",  City:" + artString[i].city );
 
-                        }
-                        if (c.isNull("performTheme")==true) {//return true or false)
+                        }*/
+                        if (c.isNull("performTheme")==false&&c.isNull("performerName")==false) {//return true or false)
                             artString[i].name = c.getString("performerName");
                             artString[i].city = c.getString("cityName");
                             artString[i].theme = c.getString("performTheme");
