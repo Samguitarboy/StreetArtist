@@ -25,7 +25,7 @@ public class Fragment_LR extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View v =inflater.inflate(R.layout.performence_data, container, false);
+        View v =inflater.inflate(R.layout.fragment_lr_showinformation, container, false);
         performart=(Button)v.findViewById(R.id.perf_button);
         viewart=(Button)v.findViewById(R.id.view_button);
         creativeart=(Button)v.findViewById(R.id.cre_button);

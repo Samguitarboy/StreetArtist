@@ -24,7 +24,7 @@ public class Fragment_LR_recentshow extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View v =inflater.inflate(R.layout.fragment_recentshow, container, false);
+        View v =inflater.inflate(R.layout.fragment_lr_recentshow, container, false);
         recent = (TextView) v.findViewById(R.id.data);
         clear = (Button)v.findViewById(R.id.clear);
         db=new MySQLiteManager(getActivity());

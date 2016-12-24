@@ -12,14 +12,16 @@ import android.widget.Button;
 
 public class SAActivity extends Activity{
 
-    public Fragment_SA_write SA;
+    public Fragment_SA_write SAW;
+    public Fragment_SA_findsite SAF;
     static Button update,findsite;
     public static FragmentManager mgr ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_street_artist);
-        SA = new Fragment_SA_write();
+        SAW = new Fragment_SA_write();
+        SAF=new Fragment_SA_findsite();
         mgr = getFragmentManager();
         update = (Button)findViewById(R.id.update);
         findsite = (Button)findViewById(R.id.findsite);
@@ -29,12 +31,22 @@ public class SAActivity extends Activity{
                 update.setVisibility(View.INVISIBLE);
                 findsite.setVisibility(View.INVISIBLE);
                 mgr.beginTransaction()
-                        .replace(R.id.street_artist, SA, "TAG-mFragment")
+                        .replace(R.id.street_artist, SAW, "TAG-mFragment")
                         .addToBackStack(null)
                         .commit();
             }
         });
-
+        findsite.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                update.setVisibility(View.INVISIBLE);
+                findsite.setVisibility(View.INVISIBLE);
+                mgr.beginTransaction()
+                        .replace(R.id.street_artist, SAF, "TAG-mFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
 }
