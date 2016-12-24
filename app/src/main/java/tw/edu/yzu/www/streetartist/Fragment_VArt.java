@@ -32,7 +32,7 @@ public class Fragment_VArt extends Fragment {
 
     public class AsyncTaskParseJson extends AsyncTask<String, String, String> {
 
-        final String TAG = "AsyncTaskParseJson.java";
+        final String TAG = "1AsyncTaskParseJson.java";
 
         // set your json string url here
         String JsonUrl = "http://cloud.culture.tw/frontsite/trans/SearchPerformPlaceAction.do?method=doFindPerformPlaceTypeJ";

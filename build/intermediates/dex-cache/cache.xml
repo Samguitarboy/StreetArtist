@@ -3,156 +3,156 @@
 
     <item
         is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_6ca2d80290dd2407e43907ecb14be441b3922a70\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_5ed6691f7643670df0f489c7c83bd53e452f8967\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_7e82af7c64028b902a88e85d218864cfb2da0969\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_42e746efa438b9ca795aec9f8de99a11d7630481\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70dd07ff779639a27b56bb3e9fa427f4d156735d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_17235c1e353d55f42aa09aaacc5d289f92b80096\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_0c9717e21a2135eb18886529bc7d02929495d1d9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a105204f99f77d183fe4ceec2f264ba170c1140d">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5a0daff76b4a2f4860855baa17dd2770a1838fec\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="c709811bd761e72fbddb13238f6600cb0d6b5c7f">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_809ee00d3489ae2769a0fed8e9bc7c1f39246565\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_352bd490a73d11ca6d0d122e2af135d3e78c2a78\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_91d7e570c1a0c29bd8967ae85b6ee12eb887d515\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\user\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_0103f83adf5d37a9d29f1aa525ed237be18f660e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_5a3cdaf5e669266e93d68dde5e4fb6133b1ba31e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_df70ffd27f92b5928b5d9d4cbbdc910ab2842a3c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_3f2d45cb72b57e813b8d5fb3bf6267995bbdafda\classes.dex" />
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_9e99f6e6b2e054f140bd7fe30f848d95a121a0e4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_26ca4e30ec90518c4ac8987f2c276f1e1201bf6b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_6b2b6fa291db72bd4c5369b9ba4867dbcbc2c944\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2d4d13f53366eaf63adc743861c035272f5a3974\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_6ba5c94a2b57b370d2df0b2f2706880c967e6965\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_240cf4c575da604bc3b444c0b2fc835e9621e883\classes.dex" />
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_3aea4d8438e5bd31ebb868844db300298e022299\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android studio\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70b7bea9ac3b133c7f3b4e215e39d2ef2f53c8ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="67f927d832de5884d039d98db633eb5f5e86cd50">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b71d4cdbc6cfde80244eca7d16b3f7f3af476133\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_9e17163905eb780e1c13a09f854f44198277bc09\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android_Studio_SDK\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_bdc2aea0d8f1ce7b313dbe9a47e669b1748fd84f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="500a979c6af465e9c76a2843ab96194116afde77">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_82170821e8745db55e81ed1c6bc3c8b2ed9df9ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_c6267e48c0824fc2d3f80af1f2a3a7acdb9d4cf8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_14f71092ffd1e7ed151ff39b560594ca765c09f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_02a9a3a1ccd3973999f0e8eaeb59e29a9656bf12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_6ddad6f53d7d71af2ea34e69b21cb78cfc086ee8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_59df733b8173c2a9e0897671127be0fab7244a60\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="D:\Android studio\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_90872a752df3b864321921a02eb015dc6144ea43\classes.dex" />
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b571cd23cf0d1095b2b8dec75a408805375079bc\classes.dex" />
     </item>
 
 </items>
