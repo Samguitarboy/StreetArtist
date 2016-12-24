@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/actionModeSplitBackground">
+    android:background="@android:color/holo_blue_dark"
+    android:id="@+id/listener">
 
+    <Button
+        android:text="表演資訊"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/showinformation"
+        android:textSize="36sp"
+        style="@android:style/Widget.Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/recentshow"
+        android:layout_marginBottom="194dp" />
+
+    <Button
+        android:text="近期表演"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recentshow"
+        style="@android:style/Widget.Button"
+        android:textSize="36sp"
+        android:layout_marginBottom="62dp"
+        android:layout_above="@+id/showinformation"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

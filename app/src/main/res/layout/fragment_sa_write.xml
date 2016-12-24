@@ -13,39 +13,8 @@
         android:layout_marginTop="16dp"
         android:id="@+id/time"
         android:layout_below="@+id/date"
-        android:layout_alignStart="@+id/date" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/context"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/place" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/place"
-        android:layout_below="@+id/time"
-        android:layout_alignStart="@+id/time"
-        android:layout_marginTop="18dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="16dp"
-        android:id="@+id/introduction"
-        android:layout_below="@+id/context"
-        android:layout_alignStart="@+id/context" />
+        android:layout_alignStart="@+id/date"
+        android:hint="10:00:00" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -56,5 +25,59 @@
         android:id="@+id/date"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="62dp" />
+        android:layout_marginEnd="62dp"
+        android:hint="2016-12-31" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/name"
+        android:hint="元智交響管樂團"
+        android:layout_below="@+id/time"
+        android:layout_alignStart="@+id/time"
+        android:layout_marginTop="14dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/place"
+        android:hint="桃園婦女館"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/context"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/place"
+        android:layout_alignStart="@+id/place"
+        android:hint="管樂表演" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/introduction"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/context"
+        android:layout_alignStart="@+id/context"
+        android:hint="超讚的樂團" />
+
+    <Button
+        android:text="我要上傳了!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UP"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="37dp" />
 </RelativeLayout>

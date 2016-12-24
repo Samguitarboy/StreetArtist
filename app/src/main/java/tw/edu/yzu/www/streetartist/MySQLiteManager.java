@@ -1,8 +1,11 @@
 package tw.edu.yzu.www.streetartist;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by 阿賢賢 on 2016/12/15.
@@ -10,18 +13,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MySQLiteManager extends SQLiteOpenHelper {
 
-    private final static int DB_VERSION = 1; // 資料庫版本
+    public final static int DB_VERSION = 1; // 資料庫版本
 
-    private final static String DB_NAME = "StreetArtist.db"; //資料庫名稱，附檔名為db
+    public final static String DB_NAME = "StreetArtist.db"; //資料庫名稱，附檔名為db
 
     public final static String TABLE = "StreetArtist";
     public final static String ID = "_Id"; //primary key
     public final static String NAME = "name";
-    public final static String DATETIME = "datetime";
+    public final static String DATE = "date";
+    public final static String TIME = "time";
     public final static String PLACE = "place";
     public final static String CONTEXT = "context";
     public final static String INTRODUCTION = "introduction";
-    public final static String[] ALL_COLUMNS = { ID, NAME, DATETIME, PLACE, CONTEXT, INTRODUCTION};
+    public final static String[] ALL_COLUMNS = { ID, NAME, DATE, TIME , PLACE, CONTEXT, INTRODUCTION};
 
     public MySQLiteManager (Context context) {
     /*
@@ -42,11 +46,12 @@ public class MySQLiteManager extends SQLiteOpenHelper {
 
         String createTable = "CREATE TABLE " + TABLE+ " ("
                 + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "  //這個屬性可以讓每次新增一筆資料，自動累加
-                + NAME + " TEXT UNIQUE NOT NULL, "
-                + DATETIME + " DATETIME, "
-                + PLACE + " TEXT, "
-                + CONTEXT + " TEXT, "
-                + INTRODUCTION + " TEXT);";
+                + "name TEXT UNIQUE NOT NULL, "
+                + "date  DATE, "
+                + "time  TIME, "
+                + "place TEXT, "
+                + "context TEXT, "
+                + "introduction TEXT);";
         db.execSQL(createTable);
     }
 
@@ -54,5 +59,66 @@ public class MySQLiteManager extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE);
         onCreate(db);
+    }
+
+    public long addData(String name, String date, String time, String place, String context, String introduction){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(NAME, name);
+        values.put(DATE, date);
+        values.put(TIME, time);
+        values.put(PLACE, place);
+        values.put(CONTEXT, context);
+        values.put(INTRODUCTION, introduction);
+        // 第一個參數是表格名稱
+        // 第二個參數是沒有指定欄位值的預設值
+        // 第三個參數是包裝新增資料的ContentValues物件
+        long result = db.insert(TABLE, null, values);
+        db.close();
+        return result;
+    }
+
+    public void delete(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE+" WHERE _Id = 5;");
+        Log.i("last","delete");
+        db.close();
+    }
+    public Cursor getAll() {
+        Cursor alltable = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+DATE+" ASC, "+TIME+" ASC, "+ID+" ASC;",null);
+        return alltable;
+    }
+
+    public String getLastTime(){
+        Cursor last = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+TIME+" ASC, "+ID+" ASC;",null);
+        last.moveToLast();
+        if(last.getCount()>0) {
+            Log.i("Last Time",last.getString(last.getColumnIndex(TIME)));
+            return last.getString(last.getColumnIndex(TIME));
+        }
+        else
+            return "43200";
+    }
+    public String getTopTime(){
+        Cursor top = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+TIME+" ASC, "+ID+" ASC;",null);
+        top.moveToFirst();
+        if(top.getCount()>0) {
+            Log.i("Top Time",top.getString(top.getColumnIndex(TIME)));
+            return top.getString(top.getColumnIndex(TIME));
+        }
+        else
+            return "43200";
+    }
+
+    public int count(){
+        Cursor all = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+DATE+" ASC, "+TIME+" ASC, "+ID+" ASC;",null);
+        Log.i("count",Integer.toString(all.getCount()));
+        return all.getCount();
+    }
+    public void clear(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM "+TABLE+";");
+        db.close();
     }
 }
