@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
 import com.nightonke.boommenu.BoomMenuButton;
-
+import com.nightonke.boommenu.BoomButtons.HamButton;
 /**
  * Created by user on 2016/12/20.
  */
@@ -44,8 +44,8 @@ public class Fragment_SA_findsite extends Fragment {
     {
         View v =inflater.inflate(R.layout.fragment_sa_findsite, container, false);
         if (first==true){
-            PlaceString =new ArtPlaceSting[1000];
-            for(int i=0;i<1000;i++){
+            PlaceString =new ArtPlaceSting[285];
+            for(int i=0;i<285;i++){
                 PlaceString[i] = new ArtPlaceSting();
             }
             first=false;
@@ -88,7 +88,7 @@ public class Fragment_SA_findsite extends Fragment {
 
         @Override
         public int getCount() {
-            return 1000;
+            return 285;
         }
 
         @Override
@@ -117,13 +117,18 @@ public class Fragment_SA_findsite extends Fragment {
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-
-            viewHolder.text.setText(PlaceString[position].place);
+            viewHolder.text.setText(PlaceString[position].place+"("+PlaceString[position].address+")");
 
 
             viewHolder.bmb2.clearBuilders();
-            for (int i = 0; i < viewHolder.bmb2.getPiecePlaceEnum().pieceNumber(); i++)
-                viewHolder.bmb2.addBuilder(BuilderManager.getHamButtonBuilder());
+            for (int i = 0; i < viewHolder.bmb2.getPiecePlaceEnum().pieceNumber(); i++) {
+                if (i == 0)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("Apply Unit: "+PlaceString[position].applyunit).subNormalText("Phone: "+PlaceString[position].phone));
+                if (i == 1)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("E-mail: "+PlaceString[position].email).subNormalText("Fax :"+PlaceString[position].fax));
+                if (i == 2)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("辦理方式:  "+PlaceString[position].register));
+            }
 
 
             return convertView;
@@ -152,7 +157,8 @@ public class Fragment_SA_findsite extends Fragment {
                 // get json string from url
                 jParser.getJSONFromUrl(JsonUrl);
                 dataJsonArr = new JSONArray(json);
-                int len=dataJsonArr.length();
+                int len = dataJsonArr.length();
+                Log.i("wwww",Integer.toString(len));
                 for(int i=0;i<len;i++){
                     JSONObject c = dataJsonArr.getJSONObject(i);
                     // Storing each json item in variable
