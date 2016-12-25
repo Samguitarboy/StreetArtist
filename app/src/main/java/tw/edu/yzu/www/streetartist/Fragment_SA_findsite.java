@@ -1,6 +1,7 @@
 package tw.edu.yzu.www.streetartist;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +22,9 @@ import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
 import com.nightonke.boommenu.BoomMenuButton;
 import com.nightonke.boommenu.BoomButtons.HamButton;
+
+import java.util.Objects;
+
 /**
  * Created by user on 2016/12/20.
  */
@@ -37,12 +42,20 @@ public class Fragment_SA_findsite extends Fragment {
     }
 
     static ArtPlaceSting[] PlaceString ;
-    boolean first=true;
-
+    boolean first= true;
+    Button newTaipei,miao,taichung,cloud,kao;
+    static int num=285;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v =inflater.inflate(R.layout.fragment_sa_findsite, container, false);
+
+        newTaipei = (Button)v.findViewById(R.id.newtaipei);
+        miao= (Button)v.findViewById(R.id.miauli);
+        taichung= (Button)v.findViewById(R.id.taichung);
+        cloud = (Button)v.findViewById(R.id.cloud);
+        kao= (Button)v.findViewById(R.id.kao);
+
         if (first==true){
             PlaceString =new ArtPlaceSting[285];
             for(int i=0;i<285;i++){
@@ -50,9 +63,9 @@ public class Fragment_SA_findsite extends Fragment {
             }
             first=false;
         }
-        new AsyncTaskParseJson().execute();
 
-        ListView listView = (ListView) v.findViewById(R.id.list_view);
+
+        final ListView listView = (ListView) v.findViewById(R.id.list_view);
         assert listView != null;
         listView.setAdapter(new MyAdapter());
         listView.setOnItemClickListener(
@@ -63,6 +76,125 @@ public class Fragment_SA_findsite extends Fragment {
                         bmb.boom();
                     }
                 });
+
+        newTaipei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newTaipei.setBackgroundResource(android.R.drawable.btn_star);
+                miao.setBackgroundResource(android.R.drawable.btn_default);
+                taichung.setBackgroundResource(android.R.drawable.btn_default);
+                cloud.setBackgroundResource(android.R.drawable.btn_default);
+                kao.setBackgroundResource(android.R.drawable.btn_default);
+
+                num=79;
+                new AsyncTaskParseJson().execute();
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                    BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                    bmb.boom();
+
+                            }
+                        });
+            }
+        });
+        miao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                miao.setBackgroundResource(android.R.drawable.btn_star);
+                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
+                taichung.setBackgroundResource(android.R.drawable.btn_default);
+                cloud.setBackgroundResource(android.R.drawable.btn_default);
+                kao.setBackgroundResource(android.R.drawable.btn_default);
+                num=30;
+                new AsyncTaskParseJson().execute();
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                bmb.boom();
+
+                            }
+                        });
+            }
+        });
+        taichung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                taichung.setBackgroundResource(android.R.drawable.btn_star);
+                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
+                miao.setBackgroundResource(android.R.drawable.btn_default);
+                cloud.setBackgroundResource(android.R.drawable.btn_default);
+                kao.setBackgroundResource(android.R.drawable.btn_default);
+                num=46;
+                new AsyncTaskParseJson().execute();
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                bmb.boom();
+
+                            }
+                        });
+            }
+        });
+        cloud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cloud.setBackgroundResource(android.R.drawable.btn_star);
+                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
+                taichung.setBackgroundResource(android.R.drawable.btn_default);
+                miao.setBackgroundResource(android.R.drawable.btn_default);
+                kao.setBackgroundResource(android.R.drawable.btn_default);
+                num=34;
+                new AsyncTaskParseJson().execute();
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                bmb.boom();
+
+                            }
+                        });
+            }
+        });
+
+        kao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                kao.setBackgroundResource(android.R.drawable.btn_star);
+                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
+                miao.setBackgroundResource(android.R.drawable.btn_default);
+                taichung.setBackgroundResource(android.R.drawable.btn_default);
+                cloud.setBackgroundResource(android.R.drawable.btn_default);
+                num=40;
+                new AsyncTaskParseJson().execute();
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                bmb.boom();
+
+                            }
+                        });
+            }
+        });
+
 
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
@@ -88,7 +220,7 @@ public class Fragment_SA_findsite extends Fragment {
 
         @Override
         public int getCount() {
-            return 285;
+            return num;
         }
 
         @Override
@@ -117,7 +249,11 @@ public class Fragment_SA_findsite extends Fragment {
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            viewHolder.text.setText(PlaceString[position].place+"("+PlaceString[position].address+")");
+
+            if (Objects.equals(PlaceString[position].address, ""))
+                viewHolder.text.setText(PlaceString[position].place);
+            else
+                viewHolder.text.setText(PlaceString[position].place+"("+PlaceString[position].address+")");
 
 
             viewHolder.bmb2.clearBuilders();
@@ -157,21 +293,137 @@ public class Fragment_SA_findsite extends Fragment {
                 // get json string from url
                 jParser.getJSONFromUrl(JsonUrl);
                 dataJsonArr = new JSONArray(json);
-                int len = dataJsonArr.length();
+                int len = num;
                 Log.i("wwww",Integer.toString(len));
-                for(int i=0;i<len;i++){
-                    JSONObject c = dataJsonArr.getJSONObject(i);
-                    // Storing each json item in variable
-                    PlaceString[i].place = c.getString("placeName");
-                    PlaceString[i].address = c.getString("address");
-                    PlaceString[i].applyunit = c.getString("applyUnit");
-                    PlaceString[i].phone = c.getString("officePhone");
-                    PlaceString[i].fax = c.getString("fax");
-                    PlaceString[i].email= c.getString("email");
-                    PlaceString[i].register= c.getString("register");
+                if(len==79) {
+                    for (int i = 0; i < len; i++) {
+                        JSONObject c = dataJsonArr.getJSONObject(i + 119);
+                        // Storing each json item in variable
+                        PlaceString[i].place = c.getString("placeName");
+                        PlaceString[i].address = c.getString("address");
+                        PlaceString[i].applyunit = c.getString("applyUnit");
+                        PlaceString[i].phone = c.getString("officePhone");
+                        PlaceString[i].fax = c.getString("fax");
+                        PlaceString[i].email = c.getString("email");
+                        PlaceString[i].register = c.getString("register");
 
-                    // show the values in our logcat
-                    Log.e(TAG,"Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address+ ",  ApplyUnit:" + PlaceString[i].applyunit+ ",  Phone:" + PlaceString[i].phone+ ",  Fax:" + PlaceString[i].fax+ ",  Email:" + PlaceString[i].email+ ",  Register:" + PlaceString[i].register);
+                        if (Objects.equals(PlaceString[i].applyunit, ""))
+                            PlaceString[i].applyunit = "無紀錄";
+                        if (Objects.equals(PlaceString[i].phone, ""))
+                            PlaceString[i].phone = "無紀錄";
+                        if (Objects.equals(PlaceString[i].fax, ""))
+                            PlaceString[i].fax = "無紀錄";
+                        if (Objects.equals(PlaceString[i].email, ""))
+                            PlaceString[i].email = "無紀錄";
+                        if (Objects.equals(PlaceString[i].register, ""))
+                            PlaceString[i].register = "無紀錄";
+                        // show the values in our logcat
+                        Log.e(TAG, "Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address + ",  ApplyUnit:" + PlaceString[i].applyunit + ",  Phone:" + PlaceString[i].phone + ",  Fax:" + PlaceString[i].fax + ",  Email:" + PlaceString[i].email + ",  Register:" + PlaceString[i].register);
+                    }
+                }
+                if(len==30){
+                        for(int i=0;i<len;i++) {
+                            JSONObject c = dataJsonArr.getJSONObject(i+88);
+                            // Storing each json item in variable
+                            PlaceString[i].place = c.getString("placeName");
+                            PlaceString[i].address = c.getString("address");
+                            PlaceString[i].applyunit = c.getString("applyUnit");
+                            PlaceString[i].phone = c.getString("officePhone");
+                            PlaceString[i].fax = c.getString("fax");
+                            PlaceString[i].email = c.getString("email");
+                            PlaceString[i].register = c.getString("register");
+
+                            if (Objects.equals(PlaceString[i].applyunit, ""))
+                                PlaceString[i].applyunit = "無紀錄";
+                            if (Objects.equals(PlaceString[i].phone, ""))
+                                PlaceString[i].phone = "無紀錄";
+                            if (Objects.equals(PlaceString[i].fax, ""))
+                                PlaceString[i].fax = "無紀錄";
+                            if (Objects.equals(PlaceString[i].email, ""))
+                                PlaceString[i].email = "無紀錄";
+                            if (Objects.equals(PlaceString[i].register, ""))
+                                PlaceString[i].register = "無紀錄";
+                            // show the values in our logcat
+                            Log.e(TAG, "Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address + ",  ApplyUnit:" + PlaceString[i].applyunit + ",  Phone:" + PlaceString[i].phone + ",  Fax:" + PlaceString[i].fax + ",  Email:" + PlaceString[i].email + ",  Register:" + PlaceString[i].register);
+                        }
+                }
+                if(len==40) {
+                    for (int i = 0; i < len; i++) {
+                        JSONObject c = dataJsonArr.getJSONObject(i);
+                        // Storing each json item in variable
+                        PlaceString[i].place = c.getString("placeName");
+                        PlaceString[i].address = c.getString("address");
+                        PlaceString[i].applyunit = c.getString("applyUnit");
+                        PlaceString[i].phone = c.getString("officePhone");
+                        PlaceString[i].fax = c.getString("fax");
+                        PlaceString[i].email = c.getString("email");
+                        PlaceString[i].register = c.getString("register");
+
+                        if (Objects.equals(PlaceString[i].applyunit, ""))
+                            PlaceString[i].applyunit = "無紀錄";
+                        if (Objects.equals(PlaceString[i].phone, ""))
+                            PlaceString[i].phone = "無紀錄";
+                        if (Objects.equals(PlaceString[i].fax, ""))
+                            PlaceString[i].fax = "無紀錄";
+                        if (Objects.equals(PlaceString[i].email, ""))
+                            PlaceString[i].email = "無紀錄";
+                        if (Objects.equals(PlaceString[i].register, ""))
+                            PlaceString[i].register = "無紀錄";
+                        // show the values in our logcat
+                        Log.e(TAG, "Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address + ",  ApplyUnit:" + PlaceString[i].applyunit + ",  Phone:" + PlaceString[i].phone + ",  Fax:" + PlaceString[i].fax + ",  Email:" + PlaceString[i].email + ",  Register:" + PlaceString[i].register);
+                    }
+                }
+                if(len==34) {
+                    for (int i = 0; i < len; i++) {
+                        JSONObject c = dataJsonArr.getJSONObject(i + 250);
+                        // Storing each json item in variable
+                        PlaceString[i].place = c.getString("placeName");
+                        PlaceString[i].address = c.getString("address");
+                        PlaceString[i].applyunit = c.getString("applyUnit");
+                        PlaceString[i].phone = c.getString("officePhone");
+                        PlaceString[i].fax = c.getString("fax");
+                        PlaceString[i].email = c.getString("email");
+                        PlaceString[i].register = c.getString("register");
+
+                        if (Objects.equals(PlaceString[i].applyunit, ""))
+                            PlaceString[i].applyunit = "無紀錄";
+                        if (Objects.equals(PlaceString[i].phone, ""))
+                            PlaceString[i].phone = "無紀錄";
+                        if (Objects.equals(PlaceString[i].fax, ""))
+                            PlaceString[i].fax = "無紀錄";
+                        if (Objects.equals(PlaceString[i].email, ""))
+                            PlaceString[i].email = "無紀錄";
+                        if (Objects.equals(PlaceString[i].register, ""))
+                            PlaceString[i].register = "無紀錄";
+                        // show the values in our logcat
+                        Log.e(TAG, "Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address + ",  ApplyUnit:" + PlaceString[i].applyunit + ",  Phone:" + PlaceString[i].phone + ",  Fax:" + PlaceString[i].fax + ",  Email:" + PlaceString[i].email + ",  Register:" + PlaceString[i].register);
+                    }
+                }
+                if(len==46) {
+                    for (int i = 0; i < len; i++) {
+                        JSONObject c = dataJsonArr.getJSONObject(i + 41);
+                        // Storing each json item in variable
+                        PlaceString[i].place = c.getString("placeName");
+                        PlaceString[i].address = c.getString("address");
+                        PlaceString[i].applyunit = c.getString("applyUnit");
+                        PlaceString[i].phone = c.getString("officePhone");
+                        PlaceString[i].fax = c.getString("fax");
+                        PlaceString[i].email = c.getString("email");
+                        PlaceString[i].register = c.getString("register");
+
+                        if (Objects.equals(PlaceString[i].applyunit, ""))
+                            PlaceString[i].applyunit = "無紀錄";
+                        if (Objects.equals(PlaceString[i].phone, ""))
+                            PlaceString[i].phone = "無紀錄";
+                        if (Objects.equals(PlaceString[i].fax, ""))
+                            PlaceString[i].fax = "無紀錄";
+                        if (Objects.equals(PlaceString[i].email, ""))
+                            PlaceString[i].email = "無紀錄";
+                        if (Objects.equals(PlaceString[i].register, ""))
+                            PlaceString[i].register = "無紀錄";
+                        // show the values in our logcat
+                        Log.e(TAG, "Place:" + PlaceString[i].place + ",  Adress:" + PlaceString[i].address + ",  ApplyUnit:" + PlaceString[i].applyunit + ",  Phone:" + PlaceString[i].phone + ",  Fax:" + PlaceString[i].fax + ",  Email:" + PlaceString[i].email + ",  Register:" + PlaceString[i].register);
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

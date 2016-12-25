@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="?attr/colorAccent">
+    android:background="?android:attr/colorControlHighlight">
 
-    <ListView
+    <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/list_view" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/list_view" >
+
+        <Button
+            android:text="新北市"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/newtaipei"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp" />
+
+        <Button
+            android:text="苗栗縣"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/miauli" />
+
+        <Button
+            android:text="台中市"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/taichung" />
+
+        <Button
+            android:text="雲林縣"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/cloud" />
+
+        <Button
+            android:text="高雄市"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/kao" />
+    </TableRow>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="520dip"
+        android:id="@+id/list_view"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
