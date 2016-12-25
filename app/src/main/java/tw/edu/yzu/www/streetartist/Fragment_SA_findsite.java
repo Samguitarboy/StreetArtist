@@ -64,7 +64,6 @@ public class Fragment_SA_findsite extends Fragment {
             first=false;
         }
 
-
         final ListView listView = (ListView) v.findViewById(R.id.list_view);
         assert listView != null;
         listView.setAdapter(new MyAdapter());

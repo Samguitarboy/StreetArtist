@@ -13,6 +13,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Objects;
+
 import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
 /**
@@ -24,7 +26,6 @@ public class Fragment_LR_VArt extends Fragment {
         private String name ;
         private String city ;
         private String theme ;
-        private String type ;
     }
 
     ArtString[] artString;
@@ -84,20 +85,15 @@ public class Fragment_LR_VArt extends Fragment {
                     int len=dataJsonArr.length();
                     for(int i=0;i<len;i++){
                         JSONObject c = dataJsonArr.getJSONObject(i);
-
-// Storing each json item in variable
-                       /* if (c.isNull("performTheme")==true&&c.isNull("perfoermerActType")==true) {//return true or false)
-                            artString[i].name = c.getString("performerName");
-                            artString[i].city = c.getString("cityName");
-                            Log.e(TAG,"Name:" + artString[i].name + ",  City:" + artString[i].city );
-
-                        }*/
+                        // Storing each json item in variable
                         if (c.isNull("performTheme")==false&&c.isNull("performerName")==false) {//return true or false)
-                            artString[i].name = c.getString("performerName");
-                            artString[i].city = c.getString("cityName");
-                            artString[i].theme = c.getString("performTheme");
-                            artString[i].type = c.getString("performerActType");
-                            Log.e(TAG,"Name:" + artString[i].name + ",  City:" + artString[i].city+ ",  Theme:" + artString[i].theme+ ",  Type:" + artString[i].type );
+                            if(Objects.equals(c.getString("performerActType"), "視覺藝術")) {
+                                artString[i].name = c.getString("performerName");
+                                artString[i].city = c.getString("cityName");
+                                artString[i].theme = c.getString("performTheme");
+
+                                Log.e(TAG, "Name:" + artString[i].name + ",  City:" + artString[i].city + ",  Theme:" + artString[i].theme);
+                            }
                         }
                     }
                 } catch (JSONException e) {
@@ -110,7 +106,7 @@ public class Fragment_LR_VArt extends Fragment {
             @Override
             protected void onPostExecute(String strFromDoInBg) {}
         }
-    }
+}
 
 
 
