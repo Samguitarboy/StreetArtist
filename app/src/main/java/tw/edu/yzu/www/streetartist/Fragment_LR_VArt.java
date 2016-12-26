@@ -8,6 +8,13 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.nightonke.boommenu.BoomButtons.HamButton;
+import com.nightonke.boommenu.BoomMenuButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -15,6 +22,7 @@ import org.json.JSONObject;
 
 import java.util.Objects;
 
+import static tw.edu.yzu.www.streetartist.Fragment_SA_findsite.PlaceString;
 import static tw.edu.yzu.www.streetartist.JsonParser.json;
 
 /**
@@ -28,20 +36,22 @@ public class Fragment_LR_VArt extends Fragment {
         private String theme ;
     }
 
-    ArtString[] artString;
+    static ArtString[] artString;
     boolean first = true;
+    static int count=0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.view_art, container, false);
-        if (first==true){
+
+        if (first){
             artString =new ArtString[3500];
             for(int i=0;i<3500;i++) {
                 artString[i] = new ArtString();
             }
+            new AsyncTaskParseJson().execute();
             first=false;
         }
-        new AsyncTaskParseJson().execute();
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
         v.requestFocus();
@@ -56,9 +66,79 @@ public class Fragment_LR_VArt extends Fragment {
                 return false;
             }
         });
+
+        final ListView listView = (ListView) v.findViewById(R.id.list_view);
+        assert listView != null;
+        listView.setAdapter(new MyAdapter());
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        BoomMenuButton bmb = (BoomMenuButton)view.findViewById(R.id.bmb2);
+                        bmb.boom();
+                    }
+                });
         return v;
     }
-        public class AsyncTaskParseJson extends AsyncTask<String, String, String> {
+    static class MyAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return count;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, final ViewGroup parent) {
+
+            final ViewHolder viewHolder;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, null);
+
+                viewHolder = new ViewHolder();
+                viewHolder.text = (TextView) convertView.findViewById(R.id.text);
+                viewHolder.bmb2 = (BoomMenuButton) convertView.findViewById(R.id.bmb2);
+
+
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
+            }
+
+
+                viewHolder.text.setText(artString[position].name+"("+artString[position].theme+")");
+
+
+            viewHolder.bmb2.clearBuilders();
+            for (int i = 0; i < viewHolder.bmb2.getPiecePlaceEnum().pieceNumber(); i++) {
+                if (i == 0)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("表演者姓名："+artString[position].name));
+                if (i == 1)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("表演主題："+artString[position].theme));
+                if (i == 2)
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("所在縣市： "+artString[position].city));
+            }
+
+
+            return convertView;
+        }
+
+        class ViewHolder {
+            TextView text;
+            BoomMenuButton bmb2;
+        }
+    }
+
+    public class AsyncTaskParseJson extends AsyncTask<String, String, String> {
 
             final String TAG = "AsyncTaskParseJson.java";
 
@@ -86,13 +166,14 @@ public class Fragment_LR_VArt extends Fragment {
                     for(int i=0;i<len;i++){
                         JSONObject c = dataJsonArr.getJSONObject(i);
                         // Storing each json item in variable
-                        if (c.isNull("performTheme")==false&&c.isNull("performerName")==false) {//return true or false)
+                        if (!c.isNull("performTheme") && !c.isNull("performerName")) {//return true or false)
                             if(Objects.equals(c.getString("performerActType"), "視覺藝術")) {
-                                artString[i].name = c.getString("performerName");
-                                artString[i].city = c.getString("cityName");
-                                artString[i].theme = c.getString("performTheme");
+                                artString[count].name = c.getString("performerName");
+                                artString[count].city = c.getString("cityName");
+                                artString[count].theme = c.getString("performTheme");
 
-                                Log.e(TAG, "Name:" + artString[i].name + ",  City:" + artString[i].city + ",  Theme:" + artString[i].theme);
+                                Log.e(TAG, "Name:" + artString[count].name + ",  City:" + artString[count].city + ",  Theme:" + artString[count].theme);
+                                count++;
                             }
                         }
                     }
