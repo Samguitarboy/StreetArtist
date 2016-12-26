@@ -52,16 +52,28 @@ public class Fragment_LR_recentshow extends Fragment{
                 str = all.getString(all.getColumnIndex("date")) + "  " + all.getString(all.getColumnIndex("time")) + "  " + all.getString(all.getColumnIndex("name"));
                 group.add(str);
                // addInfo(str, new String[]{all.getString(all.getColumnIndex("place")) , all.getString(all.getColumnIndex("context"))  , all.getString(all.getColumnIndex("introduction"))});
+                List<String> list = new ArrayList<String>();
+                list.add(all.getString(all.getColumnIndex("place")));
+                Log.i("00",all.getString(all.getColumnIndex("place")));
+                list.add(all.getString(all.getColumnIndex("context")));
+                Log.i("01",all.getString(all.getColumnIndex("context")));
+                list.add(all.getString(all.getColumnIndex("introduction")));
+                Log.i("02",all.getString(all.getColumnIndex("introduction")));
+                child.add(list);
                 i++;
                 if(i==db.count())break;
             }
-        for(int j=0;j<3;j++) {
+
+       /* for(int j=0;j<3;j++) {
             List<String> list = new ArrayList<String>();
             list.add(all.getString(all.getColumnIndex("place")));
+            Log.i("00",all.getString(all.getColumnIndex("place")));
             list.add(all.getString(all.getColumnIndex("context")));
+            Log.i("01",all.getString(all.getColumnIndex("context")));
             list.add(all.getString(all.getColumnIndex("introduction")));
+            Log.i("02",all.getString(all.getColumnIndex("introduction")));
             child.add(list);
-        }
+        }*/
             //recent.setText(str);
        // }
 
@@ -71,7 +83,7 @@ public class Fragment_LR_recentshow extends Fragment{
 
         //clear.setEnabled(false);
         //clear.setVisibility(View.INVISIBLE);
-       clear.setOnClickListener(new View.OnClickListener() {
+        clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db.clear();
@@ -115,7 +127,7 @@ public class Fragment_LR_recentshow extends Fragment{
 
         @Override
         public int getChildrenCount(int groupPosition) {
-            return child.size();
+            return 3;
         }
 
         @Override
@@ -165,7 +177,8 @@ public class Fragment_LR_recentshow extends Fragment{
             else
                 textView=(TextView)convertView;
             textView.setText(child.get(groupPosition).get(childPosition));
-            Log.i("uuuuuuu",Integer.toString(childPosition));
+            Log.i("group",Integer.toString(groupPosition));
+            Log.i("child",Integer.toString(childPosition));
             textView.setTextSize(20);
             textView.setTextColor(Color.BLACK);
             textView.setPadding(72,10,0,10);
