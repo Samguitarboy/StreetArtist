@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="3e076296c66f6e035ba12697a623cd90359ca487">
+        sha1="72557940d084d7c36d2846b2bce0c57b5c28d069">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b71d4cdbc6cfde80244eca7d16b3f7f3af476133\classes.dex" />
     </item>
     <item
@@ -106,7 +106,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="b02562c705c912178a88fb9473e4430e5d6191a0">
+        sha1="7b48b271ae83eb2b5c4df513ff340af9291470ea">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_82170821e8745db55e81ed1c6bc3c8b2ed9df9ae\classes.dex" />
     </item>
     <item

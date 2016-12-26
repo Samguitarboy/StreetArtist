@@ -60,8 +60,12 @@ public class MySQLiteManager extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE);
         onCreate(db);
     }
-
-    public long addData(String name, String date, String time, String place, String context, String introduction){
+    public void resetData(){
+        getWritableDatabase().execSQL("DROP TABLE " + TABLE);
+        getWritableDatabase().execSQL("CREATE  TABLE IF NOT EXISTS " + TABLE +
+                " (_Id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE NOT NULL, date  DATE, time  TIME, place TEXT, context TEXT, introduction TEXT);");
+    }
+    public void addData(String name, String date, String time, String place, String context, String introduction){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -74,14 +78,13 @@ public class MySQLiteManager extends SQLiteOpenHelper {
         // 第一個參數是表格名稱
         // 第二個參數是沒有指定欄位值的預設值
         // 第三個參數是包裝新增資料的ContentValues物件
-        long result = db.insert(TABLE, null, values);
+        db.insert(TABLE, null, values);
         db.close();
-        return result;
     }
 
-    public void delete(){
+    public void delete(long id ){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM "+TABLE+" WHERE _Id = 5;");
+        db.delete(TABLE,ID+"=?",new String[] {Long.toString(id)});
         Log.i("last","delete");
         db.close();
     }
@@ -89,27 +92,7 @@ public class MySQLiteManager extends SQLiteOpenHelper {
         Cursor alltable = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+DATE+" ASC, "+TIME+" ASC, "+ID+" ASC;",null);
         return alltable;
     }
-
-    public String getLastTime(){
-        Cursor last = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+TIME+" ASC, "+ID+" ASC;",null);
-        last.moveToLast();
-        if(last.getCount()>0) {
-            Log.i("Last Time",last.getString(last.getColumnIndex(TIME)));
-            return last.getString(last.getColumnIndex(TIME));
-        }
-        else
-            return "43200";
-    }
-    public String getTopTime(){
-        Cursor top = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+TIME+" ASC, "+ID+" ASC;",null);
-        top.moveToFirst();
-        if(top.getCount()>0) {
-            Log.i("Top Time",top.getString(top.getColumnIndex(TIME)));
-            return top.getString(top.getColumnIndex(TIME));
-        }
-        else
-            return "43200";
-    }
+    
 
     public int count(){
         Cursor all = getReadableDatabase().rawQuery("SELECT * FROM " + TABLE + " ORDER BY "+DATE+" ASC, "+TIME+" ASC, "+ID+" ASC;",null);
