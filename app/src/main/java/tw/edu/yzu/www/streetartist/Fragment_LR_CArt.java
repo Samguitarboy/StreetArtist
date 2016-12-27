@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,11 +43,12 @@ public class Fragment_LR_CArt extends Fragment {
     static ArtString[] artString;
     boolean first = true;
     static int count=0;
+    Button refresh;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View v =inflater.inflate(R.layout.cretive_art, container, false);
-
+        refresh = (Button)v.findViewById(R.id.refbutton);
         if (first){
             artString =new ArtString[3500];
             for(int i=0;i<3500;i++) {
@@ -56,6 +58,33 @@ public class Fragment_LR_CArt extends Fragment {
             first=false;
         }
 
+        final ListView listView = (ListView) v.findViewById(R.id.list_view);
+        assert listView != null;
+        listView.setAdapter(new MyAdapter());
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        BoomMenuButton bmb = (BoomMenuButton)view.findViewById(R.id.bmb2);
+                        bmb.boom();
+                    }
+                });
+        refresh.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                listView.setAdapter(new MyAdapter());
+                listView.setOnItemClickListener(
+                        new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                BoomMenuButton bmb = (BoomMenuButton) view.findViewById(R.id.bmb2);
+                                bmb.boom();
+
+                            }
+                        });
+            }
+        });
         v.setFocusable(true);
         v.setFocusableInTouchMode(true);
         v.requestFocus();
@@ -71,17 +100,6 @@ public class Fragment_LR_CArt extends Fragment {
             }
         });
 
-        final ListView listView = (ListView) v.findViewById(R.id.list_view);
-        assert listView != null;
-        listView.setAdapter(new MyAdapter());
-        listView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        BoomMenuButton bmb = (BoomMenuButton)view.findViewById(R.id.bmb2);
-                        bmb.boom();
-                    }
-                });
         return v;
     }
     static class MyAdapter extends BaseAdapter {
