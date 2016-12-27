@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_dark">
+    android:background="#8600FF">
 
-</RelativeLayout>
+    <tw.edu.yzu.www.streetartist.YoutubeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/youtubeLayout"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/viewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="233dp"
+            android:fontFamily="sans-serif-thin"
+            android:textSize="25sp"
+            android:tag="text"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="#AD78CC"/>
+
+        <ListView
+            android:id="@+id/viewDesc"
+            android:tag="desc"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFE6FF" />
+
+    </tw.edu.yzu.www.streetartist.YoutubeLayout>
+
+</FrameLayout>
