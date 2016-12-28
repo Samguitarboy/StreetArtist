@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8600FF">
+    android:background="#9999CC">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="408dp"
+        android:id="@+id/donate" />
 
     <tw.edu.yzu.www.streetartist.YoutubeLayout
         android:layout_width="match_parent"
@@ -12,16 +18,13 @@
         android:orientation="vertical"
         android:visibility="visible">
 
-        <TextView
+        <WebView
             android:id="@+id/viewHeader"
             android:layout_width="match_parent"
             android:layout_height="233dp"
-            android:fontFamily="sans-serif-thin"
-            android:textSize="25sp"
-            android:tag="text"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:background="#AD78CC"/>
+            android:background="#AD78CC">
+
+        </WebView>
 
         <ListView
             android:id="@+id/viewDesc"
@@ -34,5 +37,6 @@
             android:background="#FFE6FF" />
 
     </tw.edu.yzu.www.streetartist.YoutubeLayout>
+
 
 </FrameLayout>

@@ -30,15 +30,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="a30a62630f6f8e2d892ddf523288cd76bde563fc">
-        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b71d4cdbc6cfde80244eca7d16b3f7f3af476133\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
@@ -48,21 +39,66 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_9e17163905eb780e1c13a09f854f44198277bc09\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.nightonke\boommenu\2.0.4\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="4cf5f21994db58431773addb3f6a4d21237a1821">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.nightonke-boommenu-2.0.4_05e523d66c47348cd3284be401b55c60c0aae587\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.wx.goodview\goodview\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d35836245cd3eef6868341c068aa620c1769ea46">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.wx.goodview-goodview-1.0.0_46f477682d786dd0a3d36d36cd2ac0ed81c585a7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_6ba5c94a2b57b370d2df0b2f2706880c967e6965\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_3aea4d8438e5bd31ebb868844db300298e022299\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70b7bea9ac3b133c7f3b4e215e39d2ef2f53c8ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8aa880f12f7c0f4261b6b171bd4ff7aec184386c">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b71d4cdbc6cfde80244eca7d16b3f7f3af476133\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_9e17163905eb780e1c13a09f854f44198277bc09\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -79,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
-        sha1="acf53d223fde21bdf86e64d2457f5eddd6cc12b2">
+        sha1="514ce533beafdc1c597d2d8734893898576174d5">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_82170821e8745db55e81ed1c6bc3c8b2ed9df9ae\classes.dex" />
     </item>
     <item
@@ -90,15 +126,6 @@
         revision="24.0.3"
         sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_c6267e48c0824fc2d3f80af1f2a3a7acdb9d4cf8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_6ba5c94a2b57b370d2df0b2f2706880c967e6965\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -138,30 +165,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_3aea4d8438e5bd31ebb868844db300298e022299\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.3"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
         <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b571cd23cf0d1095b2b8dec75a408805375079bc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\Android_studio_project\StreetArtist\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="D:\Android_studio_project\StreetArtist\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_70b7bea9ac3b133c7f3b4e215e39d2ef2f53c8ae\classes.dex" />
     </item>
 
 </items>
