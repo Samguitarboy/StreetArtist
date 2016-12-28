@@ -82,7 +82,7 @@ public class Fragment_LR_recentshow extends Fragment{
 
 
         //clear.setEnabled(false);
-        //clear.setVisibility(View.INVISIBLE);
+        clear.setVisibility(View.INVISIBLE);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

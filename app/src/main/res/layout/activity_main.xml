@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -22,19 +23,8 @@
         android:layout_marginBottom="39dp"
         android:layout_alignStart="@+id/listener"
         android:layout_alignEnd="@+id/streetartist"
-        android:onClick="ChangeToDN" />
-
-    <Button
-        android:text="   觀眾   "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listener"
-        android:textSize="24sp"
-        android:layout_above="@+id/donate"
-        android:layout_toStartOf="@+id/streetartist"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="34dp"
-        android:onClick="ChangeToLR" />
+        android:onClick="ChangeToDN"
+        android:fontFamily="sans-serif-medium" />
 
     <Button
         android:text="街頭藝人"
@@ -46,4 +36,38 @@
         android:layout_alignTop="@+id/listener"
         android:layout_alignParentEnd="true"
         android:onClick="ChangeToSA" />
+
+    <Button
+        android:text="   觀眾   "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listener"
+        android:textSize="24sp"
+        android:layout_marginBottom="30dp"
+        android:onClick="ChangeToLR"
+        android:layout_above="@+id/donate"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/title"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="我是？"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/textView5"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/streetartist"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false" />
+
 </RelativeLayout>
