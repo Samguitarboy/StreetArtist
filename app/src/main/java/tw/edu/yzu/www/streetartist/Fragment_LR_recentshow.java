@@ -53,11 +53,11 @@ public class Fragment_LR_recentshow extends Fragment{
                 group.add(str);
                // addInfo(str, new String[]{all.getString(all.getColumnIndex("place")) , all.getString(all.getColumnIndex("context"))  , all.getString(all.getColumnIndex("introduction"))});
                 List<String> list = new ArrayList<String>();
-                list.add(all.getString(all.getColumnIndex("place")));
+                list.add("我在： "+all.getString(all.getColumnIndex("place")));
                 Log.i("00",all.getString(all.getColumnIndex("place")));
-                list.add(all.getString(all.getColumnIndex("context")));
+                list.add("要表演： "+all.getString(all.getColumnIndex("context")));
                 Log.i("01",all.getString(all.getColumnIndex("context")));
-                list.add(all.getString(all.getColumnIndex("introduction")));
+                list.add("這就是我： "+all.getString(all.getColumnIndex("introduction")));
                 Log.i("02",all.getString(all.getColumnIndex("introduction")));
                 child.add(list);
                 i++;

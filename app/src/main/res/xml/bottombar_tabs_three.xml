@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_guitar"
+        icon="@drawable/guitar"
+        title="Favorites" />
+    <tab
+        id="@+id/tab_box"
+        icon="@drawable/box"
+        title="Nearby" />
+    <tab
+        id="@+id/tab_listener"
+        icon="@drawable/listener"
+        title="Friends" />
+</tabs>

@@ -1,54 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="?android:attr/colorControlHighlight">
+    android:background="#A6FFA6">
 
-    <TableRow
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/list_view" >
+        android:layout_marginTop="5dp">
 
         <Button
-            android:text="新北市"
-            android:layout_width="66dip"
-            android:layout_height="wrap_content"
             android:id="@+id/newtaipei"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp" />
+            android:text="新北市"
+            android:textColor="#E3FF73"
+            android:textSize="15sp"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A83434"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="7"
+            android:layout_weight="1" />
 
         <Button
+            android:id="@+id/miauli"
             android:text="苗栗縣"
+            android:textColor="#E3FF73"
+            android:textSize="15sp"
             android:layout_width="66dip"
             android:layout_height="wrap_content"
-            android:id="@+id/miauli" />
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A83434"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="7"
+            android:layout_weight="1" />
 
         <Button
-            android:text="台中市"
-            android:layout_width="66dip"
-            android:layout_height="wrap_content"
-            android:id="@+id/taichung" />
-
-        <Button
+            android:id="@+id/cloud"
             android:text="雲林縣"
+            android:textColor="#E3FF73"
+            android:textSize="15sp"
             android:layout_width="66dip"
             android:layout_height="wrap_content"
-            android:id="@+id/cloud" />
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A83434"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="7"
+            android:layout_weight="1" />
 
         <Button
+            android:id="@+id/kao"
             android:text="高雄市"
+            android:textColor="#E3FF73"
+            android:textSize="15sp"
             android:layout_width="66dip"
             android:layout_height="wrap_content"
-            android:id="@+id/kao" />
-    </TableRow>
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A83434"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="7"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/taichung"
+            android:text="台中市"
+            android:textColor="#E3FF73"
+            android:textSize="15sp"
+            android:layout_width="66dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A83434"
+            android:shadowDx="2"
+            android:shadowDy="5"
+            android:shadowRadius="7"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="520dip"
         android:id="@+id/list_view"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="59dp"
+        android:background="#0000C6" />
 
 </RelativeLayout>

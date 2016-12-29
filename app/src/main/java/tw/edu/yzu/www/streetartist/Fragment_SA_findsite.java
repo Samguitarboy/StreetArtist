@@ -30,6 +30,7 @@ import java.util.Objects;
  */
 
 public class Fragment_SA_findsite extends Fragment {
+
     public class ArtPlaceSting {
 
         private String place ;
@@ -79,11 +80,11 @@ public class Fragment_SA_findsite extends Fragment {
         newTaipei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                newTaipei.setBackgroundResource(android.R.drawable.btn_star);
-                miao.setBackgroundResource(android.R.drawable.btn_default);
-                taichung.setBackgroundResource(android.R.drawable.btn_default);
-                cloud.setBackgroundResource(android.R.drawable.btn_default);
-                kao.setBackgroundResource(android.R.drawable.btn_default);
+                newTaipei.setBackgroundResource(R.drawable.buttonshape1);
+                miao.setBackgroundResource(R.drawable.buttonshape);
+                taichung.setBackgroundResource(R.drawable.buttonshape);
+                cloud.setBackgroundResource(R.drawable.buttonshape);
+                kao.setBackgroundResource(R.drawable.buttonshape);
 
                 num=79;
                 new AsyncTaskParseJson().execute();
@@ -103,11 +104,11 @@ public class Fragment_SA_findsite extends Fragment {
         miao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                miao.setBackgroundResource(android.R.drawable.btn_star);
-                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
-                taichung.setBackgroundResource(android.R.drawable.btn_default);
-                cloud.setBackgroundResource(android.R.drawable.btn_default);
-                kao.setBackgroundResource(android.R.drawable.btn_default);
+                miao.setBackgroundResource(R.drawable.buttonshape1);
+                newTaipei.setBackgroundResource(R.drawable.buttonshape);
+                taichung.setBackgroundResource(R.drawable.buttonshape);
+                cloud.setBackgroundResource(R.drawable.buttonshape);
+                kao.setBackgroundResource(R.drawable.buttonshape);
                 num=30;
                 new AsyncTaskParseJson().execute();
                 listView.setAdapter(new MyAdapter());
@@ -126,11 +127,11 @@ public class Fragment_SA_findsite extends Fragment {
         taichung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                taichung.setBackgroundResource(android.R.drawable.btn_star);
-                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
-                miao.setBackgroundResource(android.R.drawable.btn_default);
-                cloud.setBackgroundResource(android.R.drawable.btn_default);
-                kao.setBackgroundResource(android.R.drawable.btn_default);
+                taichung.setBackgroundResource(R.drawable.buttonshape1);
+                newTaipei.setBackgroundResource(R.drawable.buttonshape);
+                miao.setBackgroundResource(R.drawable.buttonshape);
+                cloud.setBackgroundResource(R.drawable.buttonshape);
+                kao.setBackgroundResource(R.drawable.buttonshape);
                 num=46;
                 new AsyncTaskParseJson().execute();
                 listView.setAdapter(new MyAdapter());
@@ -149,11 +150,11 @@ public class Fragment_SA_findsite extends Fragment {
         cloud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cloud.setBackgroundResource(android.R.drawable.btn_star);
-                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
-                taichung.setBackgroundResource(android.R.drawable.btn_default);
-                miao.setBackgroundResource(android.R.drawable.btn_default);
-                kao.setBackgroundResource(android.R.drawable.btn_default);
+                cloud.setBackgroundResource(R.drawable.buttonshape1);
+                newTaipei.setBackgroundResource(R.drawable.buttonshape);
+                taichung.setBackgroundResource(R.drawable.buttonshape);
+                miao.setBackgroundResource(R.drawable.buttonshape);
+                kao.setBackgroundResource(R.drawable.buttonshape);
                 num=34;
                 new AsyncTaskParseJson().execute();
                 listView.setAdapter(new MyAdapter());
@@ -173,11 +174,11 @@ public class Fragment_SA_findsite extends Fragment {
         kao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                kao.setBackgroundResource(android.R.drawable.btn_star);
-                newTaipei.setBackgroundResource(android.R.drawable.btn_default);
-                miao.setBackgroundResource(android.R.drawable.btn_default);
-                taichung.setBackgroundResource(android.R.drawable.btn_default);
-                cloud.setBackgroundResource(android.R.drawable.btn_default);
+                kao.setBackgroundResource(R.drawable.buttonshape1);
+                newTaipei.setBackgroundResource(R.drawable.buttonshape);
+                miao.setBackgroundResource(R.drawable.buttonshape);
+                taichung.setBackgroundResource(R.drawable.buttonshape);
+                cloud.setBackgroundResource(R.drawable.buttonshape);
                 num=40;
                 new AsyncTaskParseJson().execute();
                 listView.setAdapter(new MyAdapter());
@@ -242,7 +243,7 @@ public class Fragment_SA_findsite extends Fragment {
                 viewHolder = new ViewHolder();
                 viewHolder.text = (TextView) convertView.findViewById(R.id.text);
                 viewHolder.bmb2 = (BoomMenuButton) convertView.findViewById(R.id.bmb2);
-
+                viewHolder.text.setTextColor(Color.WHITE);
 
                 convertView.setTag(viewHolder);
             } else {
@@ -258,13 +259,12 @@ public class Fragment_SA_findsite extends Fragment {
             viewHolder.bmb2.clearBuilders();
             for (int i = 0; i < viewHolder.bmb2.getPiecePlaceEnum().pieceNumber(); i++) {
                 if (i == 0)
-                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("Apply Unit: "+PlaceString[position].applyunit).subNormalText("Phone: "+PlaceString[position].phone));
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("Apply Unit: " + PlaceString[position].applyunit).subNormalText("Phone: " + PlaceString[position].phone));
                 if (i == 1)
-                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("E-mail: "+PlaceString[position].email).subNormalText("Fax :"+PlaceString[position].fax));
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("E-mail: " + PlaceString[position].email).subNormalText("Fax :" + PlaceString[position].fax));
                 if (i == 2)
-                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("辦理方式:  "+PlaceString[position].register));
+                    viewHolder.bmb2.addBuilder(new HamButton.Builder().normalText("辦理方式:  " + PlaceString[position].register));
             }
-
 
             return convertView;
         }

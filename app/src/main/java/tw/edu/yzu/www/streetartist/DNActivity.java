@@ -30,6 +30,7 @@ import java.util.List;
  */
 
 public class DNActivity extends Activity {
+
     private ListView listView;
     private String[] list = {"街頭藝人1","街頭藝人2","街頭藝人3","街頭藝人4","街頭藝人5","街頭藝人6","街頭藝人7","街頭藝人8","街頭藝人9","街頭藝人10"};
     private ArrayAdapter<String> listAdapter;

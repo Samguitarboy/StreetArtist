@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_guitar"
+        icon="@drawable/guitar"
+        title="Busker"
+        barColorWhenSelected="#7B1FA2" />
+    <tab
+        id="@+id/tab_box"
+        icon="@drawable/box"
+        title="Reward"
+        barColorWhenSelected="#FF5252" />
+    <tab
+        id="@+id/tab_listener"
+        icon="@drawable/listener"
+        title="Listener"
+        barColorWhenSelected="#FF9800" />
+</tabs>

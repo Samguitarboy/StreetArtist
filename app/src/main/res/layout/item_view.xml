@@ -10,7 +10,7 @@
         android:id="@+id/list_item_thumbnail"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/busker1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:onClick="good"
-        android:background="@mipmap/icon1"
+        android:background="@mipmap/good"
         android:id="@+id/list_item_btn"
         android:layout_marginEnd="25dp"
         android:layout_alignBottom="@+id/list_item_text"
